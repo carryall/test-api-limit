@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   root :to => 'home#index'
   mount ShopifyApp::Engine, at: '/'
+
   controller :sessions do
     get 'login' => :new, :as => :login
     post 'login' => :create, :as => :authenticate
