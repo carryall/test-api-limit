@@ -16,6 +16,7 @@ class ProxyController < ApplicationController
 
           BaseWorker.perform_async do
             p "#{t1} #{t2}"
+            logger.debug "#{t1} #{t2}"
           end
 
           # product = ShopifyAPI::Product.all
