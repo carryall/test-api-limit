@@ -47,6 +47,6 @@ group :development do
 end
 
 gem "shopify_app"
-gem 'sidekiq'
-gem 'sidekiq-rate-limiter', :require => 'sidekiq-rate-limiter/server'
+# gem 'sidekiq'
+# gem 'sidekiq-rate-limiter'#, :require => 'sidekiq-rate-limiter/server'
 

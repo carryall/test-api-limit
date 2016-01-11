@@ -9,23 +9,27 @@ class ProxyController < ApplicationController
     # @products = ShopifyAPI::Product.find(:all, :params => {:limit => 10})
     # @products = []
     
+    # BaseWorker.perform_async do
+    #   p "#{t1} #{t2}"
+    #   logger.debug "#{t1} #{t2}"
+    # end
 
-    10.times do |t1|
-      Thread.new do
-        10.times do |t2|
+    # 10.times do |t1|
+    #   Thread.new do
+    #     10.times do |t2|
 
-          BaseWorker.perform_async do
-            p "#{t1} #{t2}"
-            logger.debug "#{t1} #{t2}"
-          end
+    #       BaseWorker.perform_async do
+    #         p "#{t1} #{t2}"
+    #         logger.debug "#{t1} #{t2}"
+    #       end
 
-          # product = ShopifyAPI::Product.all
-          # p "#{t1} #{t2} left:#{ShopifyAPI.credit_left} max?:#{ShopifyAPI.credit_maxed?}"
-        end
-      end
-    end
+    #       # product = ShopifyAPI::Product.all
+    #       # p "#{t1} #{t2} left:#{ShopifyAPI.credit_left} max?:#{ShopifyAPI.credit_maxed?}"
+    #     end
+    #   end
+    # end
 
-    render :layout => false, :content_type => 'application/liquid'
+    render :layout => false#, :content_type => 'application/liquid'
   end
 
   # def render_text
