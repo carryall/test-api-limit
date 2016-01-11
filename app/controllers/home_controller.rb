@@ -5,8 +5,8 @@ class HomeController < AuthenticatedController
   # SHOP_NAME = "testdeployment"
 
   def index
-    p "params #{params}"
-    @products = ShopifyAPI::Product.find(:all)
+    # p "params #{params}"
+    # @products = ShopifyAPI::Product.find(:all)
 
     # shop = Shop.where(shopify_domain: params[:shop]).first
 
