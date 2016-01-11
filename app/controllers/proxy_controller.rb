@@ -8,7 +8,7 @@ class ProxyController < ApplicationController
 
     # @products = ShopifyAPI::Product.find(:all, :params => {:limit => 10})
     # @products = []
-    render :layout => false, :content_type => 'application/liquid'
+    # render :layout => false, :content_type => 'application/liquid'
   end
 
   # def render_text
