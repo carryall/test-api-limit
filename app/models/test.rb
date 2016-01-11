@@ -5,11 +5,17 @@ class Test
   SHOP_NAME = "testdeployment"
 
   def private_app
-    # shop_url = "https://#{API_KEY}:#{PASSWORD}@#{SHOP_NAME}.myshopify.com/admin"
-    # ShopifyAPI::Base.site = shop_url
+    shop_url = "https://#{API_KEY}:#{PASSWORD}@#{SHOP_NAME}.myshopify.com/admin"
+    ShopifyAPI::Base.site = shop_url
     # p "shop_url #{shop_url}"
 
     # shop = ShopifyAPI::Shop.current
+
+    domain = "#{SHOP_NAME}.myshopify.com"
+    shop = Shop.where(shopify_domain: domain).first
+    p "Shop #{shop.inspect}"
+    session = ShopifyAPI::Session.new(shop.shopify_domain, shop.shopify_token)
+    ShopifyAPI::Base.activate_session(session)
 
     # Get a specific product
     # product = ShopifyAPI::Product.find(179761209)
@@ -18,15 +24,11 @@ class Test
     #   p "#{t} #{product.inspect}"
     # end
 
+    p "left:#{ShopifyAPI.credit_left} max?:#{ShopifyAPI.credit_maxed?}"
+
     10.times do |t1|
       Thread.new do
         10.times do |t2|
-          shop_url = "https://#{API_KEY}:#{PASSWORD}@#{SHOP_NAME}.myshopify.com/admin"
-          ShopifyAPI::Base.site = shop_url
-          p "shop_url #{shop_url}"
-
-          shop = ShopifyAPI::Shop.current
-          
           product = ShopifyAPI::Product.all
           p "#{t1} #{t2} left:#{ShopifyAPI.credit_left} max?:#{ShopifyAPI.credit_maxed?}"
         end

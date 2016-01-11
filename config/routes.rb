@@ -10,6 +10,12 @@ Rails.application.routes.draw do
     get 'logout' => :destroy, :as => :logout
   end
 
+  controller :proxy do
+    get 'proxy' => :index, :as => :proxy
+    get 'proxy/render_text' => :render_text
+    get 'proxy/render_text_liquid' => :render_text_liquid
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

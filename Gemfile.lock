@@ -140,8 +140,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    shopify-api-limits (0.0.8)
-      shopify_api (>= 1.2.2)
     shopify_api (4.0.7)
       activeresource
       rack
@@ -185,7 +183,6 @@ DEPENDENCIES
   rails (= 4.2.5)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  shopify-api-limits
   shopify_app
   spring
   turbolinks

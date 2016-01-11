@@ -47,5 +47,5 @@ group :development do
 end
 
 gem "shopify_app"
-gem "shopify-api-limits"
+# gem "shopify-api-limits"
 
