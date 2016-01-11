@@ -8,10 +8,10 @@ class HomeController < AuthenticatedController
     p "params #{params}"
     @products = ShopifyAPI::Product.find(:all)
 
-    shop = Shop.where(shopify_domain: params[:shop]).first
+    # shop = Shop.where(shopify_domain: params[:shop]).first
 
-    session = ShopifyAPI::Session.new(shop.shopify_domain, shop.shopify_token)
-    ShopifyAPI::Base.activate_session(session)
+    # session = ShopifyAPI::Session.new(shop.shopify_domain, shop.shopify_token)
+    # ShopifyAPI::Base.activate_session(session)
 
     # shop_url = "https://#{API_KEY}:#{PASSWORD}@#{SHOP_NAME}.myshopify.com/admin"
     # ShopifyAPI::Base.site = shop_url
