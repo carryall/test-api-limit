@@ -6,7 +6,7 @@ ShopifyApp.configure do |config|
   # public
   config.api_key = "ebc9735e859e204a1b7df25c0f2756c9"
   config.secret = "b6fb6c3fa5f8667b5c82d66e92a9dc54"
-  config.redirect_uri = "http://test-api-limit.herokuapp.com/auth/shopify/callback"
+  config.redirect_uri = "http://localproxy.localtunnel.me/auth/shopify/callback"
   config.scope = "read_orders, read_products"
   config.embedded_app = true
 end
